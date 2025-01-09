@@ -1,0 +1,24 @@
+﻿@page
+@using Microsoft.AspNetCore.Authentication
+@using Ardalis.GuardClauses
+@model IndexModel
+
+<h1>Claims</h1>
+
+<dl>
+    @foreach (var claim in User.Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dd>@claim.Value</dd>
+    }
+</dl>
+
+<h1>Properties</h1>
+
+<dl>
+    @foreach (var prop in Guard.Against.Null((await HttpContext.AuthenticateAsync()).Properties).Items)
+    {
+        <dt>@prop.Key</dt>
+        <dd>@prop.Value</dd>
+    }
+</dl>
