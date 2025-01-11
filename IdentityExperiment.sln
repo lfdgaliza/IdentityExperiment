@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Cli", "Weat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Web", "WeatherForecast.Web\WeatherForecast.Web.csproj", "{FA3BB7D1-43A5-4AA1-942A-F98458C11B32}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeatherForecast", "WeatherForecast", "{FB86E6DD-5EA0-4041-AD00-3BB193705FB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{4616E810-33B0-4FBF-9BA6-DC454B0F10D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C2D5704D-5537-4B5E-AC15-506DFBF72288} = {FB86E6DD-5EA0-4041-AD00-3BB193705FB2}
+		{91D2DA77-E95E-4F2F-8C3B-EDC6CEC61F98} = {4616E810-33B0-4FBF-9BA6-DC454B0F10D9}
+		{FA3BB7D1-43A5-4AA1-942A-F98458C11B32} = {4616E810-33B0-4FBF-9BA6-DC454B0F10D9}
+		{4616E810-33B0-4FBF-9BA6-DC454B0F10D9} = {FB86E6DD-5EA0-4041-AD00-3BB193705FB2}
 	EndGlobalSection
 EndGlobal
