@@ -17,7 +17,7 @@ var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCr
 {
     Address = discovery.TokenEndpoint,
     ClientId = "my-weather-app",
-    ClientSecret = "my-super-secret",
+    ClientSecret = "my-super-secret", // TODO: Understand how it knows it needs to hash to either Sha256 or 512
     Scope = "weather-forecast"
 }, CancellationToken.None);
 

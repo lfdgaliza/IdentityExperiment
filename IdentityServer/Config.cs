@@ -12,16 +12,20 @@ namespace IdentityExperiment
         ];
 
         public static IEnumerable<ApiScope> ApiScopes => [
-            new(name: "weather-forecast", displayName: "Weather Forecast")
+            // TODO: rename to "weather-forecast-api"
+            // TODO: Consider extracting it to a common constant
+            new(name: "weather-forecast", displayName: "Weather Forecast") 
         ];
 
         public static IEnumerable<Client> Clients => [
             new()
             {
-                ClientId = "my-weather-app",
+                ClientId = "my-weather-app", // TODO: Consider extracting it to a common constant
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
-                ClientSecrets = [new("my-super-secret".Sha256())],
-                AllowedScopes = ["weather-forecast"]
+                // TODO: Consider extracting it to a common constant
+                // TODO: Consider an extension to call either Sha256|512 so it affects all at the same time
+                ClientSecrets = [new("my-super-secret".Sha256())], 
+                AllowedScopes = ["weather-forecast"] // TODO: Consider extracting it to a common constant
             },
             new()
             {
@@ -37,7 +41,8 @@ namespace IdentityExperiment
                 AllowedScopes =
                 [
                     IdentityServerConstants.StandardScopes.OpenId,
-                    IdentityServerConstants.StandardScopes.Profile
+                    IdentityServerConstants.StandardScopes.Profile,
+                    "weather-forecast" // TODO: Consider extracting it to a common constant
                 ],
             }
         ];

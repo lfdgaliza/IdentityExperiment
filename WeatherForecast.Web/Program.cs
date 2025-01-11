@@ -24,6 +24,7 @@ builder.Services
         options.Scope.Clear();
         options.Scope.Add("openid");
         options.Scope.Add("profile");
+        options.Scope.Add("weather-forecast");
 
         // the "profile" scope claims are normally not included in the identity token to keep the token lean
         // Thanks to the standardization of the OIDC protocol, we can request the claims we need from the userinfo endpoint automatically
