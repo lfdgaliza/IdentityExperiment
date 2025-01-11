@@ -38,6 +38,7 @@ namespace IdentityExperiment
                 AllowedGrantTypes = GrantTypes.Code,
                 RedirectUris = ["https://localhost:5002/signin-oidc"],
                 PostLogoutRedirectUris = ["https://localhost:5002/signout-callback-oidc"],
+                AllowOfflineAccess = true, // Enables refresh tokens
                 AllowedScopes =
                 [
                     IdentityServerConstants.StandardScopes.OpenId,

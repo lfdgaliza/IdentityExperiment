@@ -2,6 +2,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddOpenIdConnectAccessTokenManagement();
+// TODO: Client name should be in a constant
+builder.Services.AddUserAccessTokenHttpClient("weather-forecast-api", configureClient: client => { 
+    client.BaseAddress = new Uri("https://localhost:6001"); // TODO: appsettings.json
+});
 
 builder.Services
     .AddAuthentication(options =>
@@ -14,17 +19,20 @@ builder.Services
     .AddCookie("Cookies")
     .AddOpenIdConnect("oidc", options =>
     {
-        options.Authority = "https://localhost:5001";
-        options.ClientId = "weather-web-app";
-        options.ClientSecret = "my-super-secret";
-        options.ResponseType = "code"; // This comes from /.well-known/openid-configuration (response_types_supported)
+        options.Authority = "https://localhost:5001"; // TODO: appsettings.json
+        options.ClientId = "weather-web-app"; // TODO: appsettings.json
+        options.ClientSecret = "my-super-secret"; // TODO: secret manager
+        // This comes from /.well-known/openid-configuration (response_types_supported)
+        // It should have a constant for that
+        options.ResponseType = "code"; 
 
         // By default, the handler will request the "openid" and "profile" scopes.
         // We can be explicit by doing the follolwing:
         options.Scope.Clear();
-        options.Scope.Add("openid");
-        options.Scope.Add("profile");
-        options.Scope.Add("weather-forecast");
+        options.Scope.Add("openid"); // To authenticate the user
+        options.Scope.Add("profile"); // To retrieve the user's profile
+        options.Scope.Add("weather-forecast"); // To access the weather forecast API
+        options.Scope.Add("offline_access"); // To retrieve refresh tokens
 
         // the "profile" scope claims are normally not included in the identity token to keep the token lean
         // Thanks to the standardization of the OIDC protocol, we can request the claims we need from the userinfo endpoint automatically

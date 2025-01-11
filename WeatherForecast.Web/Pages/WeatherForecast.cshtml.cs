@@ -1,3 +1,5 @@
+using Ardalis.GuardClauses;
+using Duende.IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -6,17 +8,17 @@ using System.Text.Json;
 
 namespace WeatherForecast.Web.Pages
 {
-    public class WeatherForecastModel : PageModel
+    public class WeatherForecastModel(IHttpClientFactory httpClientFactory) : PageModel
     {
+        private readonly IHttpClientFactory httpClientFactory = httpClientFactory;
+
         public string Json { get; set; } = string.Empty;
         public async Task OnGet()
         {
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
-            // TODO: Use a factory
-            var weatherForecastApiClient = new HttpClient();
-            weatherForecastApiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            // TODO: Client name should be in a constant
+            var weatherForecastApiClient = httpClientFactory.CreateClient("weather-forecast-api");
 
-            var response = await weatherForecastApiClient.GetAsync("https://localhost:6001/weatherforecast");
+            var response = await weatherForecastApiClient.GetAsync("weatherforecast");
 
             if (response.IsSuccessStatusCode)
             {
