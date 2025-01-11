@@ -17,12 +17,12 @@ builder.Services
         options.Authority = "https://localhost:5001";
         options.ClientId = "weather-web-app";
         options.ClientSecret = "my-super-secret";
-        options.ResponseType = "code"; // TODO: where is this string comming from?
+        options.ResponseType = "code"; // This comes from /.well-known/openid-configuration (response_types_supported)
 
         // By default, the handler will request the "openid" and "profile" scopes.
         // We can be explicit by doing the follolwing:
         options.Scope.Clear();
-        options.Scope.Add("openid"); // sub
+        options.Scope.Add("openid");
         options.Scope.Add("profile");
 
         // the "profile" scope claims are normally not included in the identity token to keep the token lean
