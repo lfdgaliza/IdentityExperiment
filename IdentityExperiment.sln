@@ -3,23 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{FD166897-3025-4656-AB43-4C6D8F1E8F4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "src\IdentityServer\IdentityServer.csproj", "{FD166897-3025-4656-AB43-4C6D8F1E8F4E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeatherForecast", "WeatherForecast", "{FB86E6DD-5EA0-4041-AD00-3BB193705FB2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{4616E810-33B0-4FBF-9BA6-DC454B0F10D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Domain", "WeatherForecasts.Domain\WeatherForecasts.Domain.csproj", "{9DECB5F9-FCB5-48A6-92B2-95A2DF29A4C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Domain", "src\WeatherForecasts.Domain\WeatherForecasts.Domain.csproj", "{9DECB5F9-FCB5-48A6-92B2-95A2DF29A4C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Application", "WeatherForecasts.Application\WeatherForecasts.Application.csproj", "{03AF382C-0B99-4F26-A8F7-EAC197032856}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Application", "src\WeatherForecasts.Application\WeatherForecasts.Application.csproj", "{03AF382C-0B99-4F26-A8F7-EAC197032856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Api", "WeatherForecasts.Api\WeatherForecasts.Api.csproj", "{E595B1BB-2F33-4FB8-9501-5AC3FF29B8F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Api", "src\WeatherForecasts.Api\WeatherForecasts.Api.csproj", "{E595B1BB-2F33-4FB8-9501-5AC3FF29B8F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Web", "WeatherForecasts.Web\WeatherForecast.Web.csproj", "{BC87A5E3-7C02-43F2-8FC4-3BF1A417E3C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Web", "src\WeatherForecasts.Web\WeatherForecast.Web.csproj", "{BC87A5E3-7C02-43F2-8FC4-3BF1A417E3C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Domain.UnitTests", "..\tests\UnitTests\WeatherForecasts.Domain.UnitTests\WeatherForecasts.Domain.UnitTests.csproj", "{1B68E534-E91F-4773-8EF6-D525ADBB0657}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Domain.UnitTests", "tests\UnitTests\WeatherForecasts.Domain.UnitTests\WeatherForecasts.Domain.UnitTests.csproj", "{1B68E534-E91F-4773-8EF6-D525ADBB0657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Application.UnitTests", "WeatherForecasts.Application.UnitTests\WeatherForecasts.Application.UnitTests.csproj", "{C467037D-7080-49BC-B945-FD615113497C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Application.UnitTests", "tests\UnitTests\WeatherForecasts.Application.UnitTests\WeatherForecasts.Application.UnitTests.csproj", "{C467037D-7080-49BC-B945-FD615113497C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
