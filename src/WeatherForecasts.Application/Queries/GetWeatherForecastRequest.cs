@@ -5,9 +5,11 @@ namespace WeatherForecasts.Application.Queries;
 
 public sealed record GetWeatherForecastRequest : IRequest<IEnumerable<WeatherForecast>>;
 
-internal sealed class GetWeatherForecastRequestHandler : IRequestHandler<GetWeatherForecastRequest, IEnumerable<Domain.WeatherForecast>>
+internal sealed class GetWeatherForecastRequestHandler : IRequestHandler<GetWeatherForecastRequest, IEnumerable<WeatherForecast>>
 {
-    public Task<IEnumerable<Domain.WeatherForecast>> Handle(GetWeatherForecastRequest request, CancellationToken cancellationToken)
+    public const int ForecastCount = 5;
+
+    public Task<IEnumerable<WeatherForecast>> Handle(GetWeatherForecastRequest request, CancellationToken cancellationToken)
     {
         var summaries = new[]
         {
@@ -15,7 +17,7 @@ internal sealed class GetWeatherForecastRequestHandler : IRequestHandler<GetWeat
         };
 
         var forecast = Enumerable
-            .Range(1, 5)
+            .Range(1, ForecastCount)
             .Select(index =>
                 new WeatherForecast
                 (
