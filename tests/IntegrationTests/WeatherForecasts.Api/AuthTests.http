@@ -1,0 +1,22 @@
+### 1. Get a weather forecast without authentication - 401
+GET {{host}}/WeatherForecast
+Accept: application/json
+
+?? status == 401
+
+### 2. Get a Token - 200
+# @name connect
+POST https://localhost:5001/connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&client_id=integration-tests&client_secret=my-super-secret&scope=weather-forecast
+
+?? status == 200
+
+### 3. Get a weather forecast with authentication - 200
+# @forceRef connect
+GET {{host}}/WeatherForecast
+Accept: application/json
+Authorization: Bearer {{connect.access_token}}
+
+?? status == 200

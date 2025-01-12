@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Domain.Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecasts.Application.UnitTests", "tests\UnitTests\WeatherForecasts.Application.UnitTests\WeatherForecasts.Application.UnitTests.csproj", "{C467037D-7080-49BC-B945-FD615113497C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.Cli", "src\WeatherForecast.Cli\WeatherForecast.Cli.csproj", "{C2EB285D-14C9-4FAD-B937-60BF72C43410}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{C467037D-7080-49BC-B945-FD615113497C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C467037D-7080-49BC-B945-FD615113497C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C467037D-7080-49BC-B945-FD615113497C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2EB285D-14C9-4FAD-B937-60BF72C43410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2EB285D-14C9-4FAD-B937-60BF72C43410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2EB285D-14C9-4FAD-B937-60BF72C43410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2EB285D-14C9-4FAD-B937-60BF72C43410}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +73,6 @@ Global
 		{BC87A5E3-7C02-43F2-8FC4-3BF1A417E3C8} = {4616E810-33B0-4FBF-9BA6-DC454B0F10D9}
 		{1B68E534-E91F-4773-8EF6-D525ADBB0657} = {FB86E6DD-5EA0-4041-AD00-3BB193705FB2}
 		{C467037D-7080-49BC-B945-FD615113497C} = {FB86E6DD-5EA0-4041-AD00-3BB193705FB2}
+		{C2EB285D-14C9-4FAD-B937-60BF72C43410} = {4616E810-33B0-4FBF-9BA6-DC454B0F10D9}
 	EndGlobalSection
 EndGlobal
