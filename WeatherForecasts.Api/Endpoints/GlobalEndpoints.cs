@@ -1,6 +1,6 @@
-﻿using WeatherForecast.Api.Endpoints.WeatherForecasts;
+﻿using WeatherForecasts.Api.Endpoints.WeatherForecasts;
 
-namespace WeatherForecast.Api.Endpoints;
+namespace WeatherForecasts.Api.Endpoints;
 
 /// <summary>
 /// Concentrates all the endpoints in the application

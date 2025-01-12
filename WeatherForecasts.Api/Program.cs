@@ -1,4 +1,5 @@
-using WeatherForecast.Api.Endpoints;
+using WeatherForecasts.Api.Endpoints;
+using WeatherForecasts.Application.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,7 @@ builder.Services
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<GetWeatherForecastRequest>());
 
 var app = builder.Build();
 

@@ -1,17 +1,13 @@
 ﻿using MediatR;
+using WeatherForecasts.Domain;
 
-namespace WeatherForecast.Api.Queries;
+namespace WeatherForecasts.Application.Queries;
 
-public sealed record GetWeatherForecastRequest : IRequest<IEnumerable<Forecast>>;
+public sealed record GetWeatherForecastRequest : IRequest<IEnumerable<WeatherForecast>>;
 
-internal sealed record Forecast(DateOnly Date, int TemperatureC, string? Summary)
+internal sealed class GetWeatherForecastRequestHandler : IRequestHandler<GetWeatherForecastRequest, IEnumerable<Domain.WeatherForecast>>
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
-
-internal sealed class GetWeatherForecastRequestHandler : IRequestHandler<GetWeatherForecastRequest, IEnumerable<Forecast>>
-{
-    public Task<IEnumerable<Forecast>> Handle(GetWeatherForecastRequest request, CancellationToken cancellationToken)
+    public Task<IEnumerable<Domain.WeatherForecast>> Handle(GetWeatherForecastRequest request, CancellationToken cancellationToken)
     {
         var summaries = new[]
         {
@@ -21,7 +17,7 @@ internal sealed class GetWeatherForecastRequestHandler : IRequestHandler<GetWeat
         var forecast = Enumerable
             .Range(1, 5)
             .Select(index =>
-                new Forecast
+                new WeatherForecast
                 (
                     DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                     Random.Shared.Next(-20, 55),

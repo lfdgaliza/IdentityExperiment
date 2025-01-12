@@ -1,4 +1,4 @@
-﻿namespace WeatherForecast.Api.Endpoints.WeatherForecasts;
+﻿namespace WeatherForecasts.Api.Endpoints.WeatherForecasts;
 
 /// <summary>
 /// Contains the endpoints for the weather forecast
@@ -22,5 +22,5 @@ public static class ForecastsEndpointsRegistry
             .WithOpenApi();
 
         return app;
-    }   
+    }
 }
